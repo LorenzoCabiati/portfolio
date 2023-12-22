@@ -136,8 +136,10 @@ nav a:active {
         flex-direction: column;
         text-align: center;
         padding-right: 30%;
-        padding-left: 30%;
+        /* padding-left: 30%; */
         border-bottom: solid rgba(189, 186, 186, 0.308) 1px;
+        margin-left: 30%;
+        margin-right: 30%;
     }
 
     nav a {
@@ -186,6 +188,26 @@ nav a:active {
     }
 
 }
+@media screen and (max-width: 1500px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+    }
+    .title{
+        padding-top: 7%;
+    }
+    .image-container img {
+        margin-top: 10%;
+    }
+    nav{
+        justify-content: center;
+        padding-right: 0;
+    }
+    .content-button{
+        margin-top: 10%;
+    }
+}
 
 .hamburger-menu {
     padding-left: 90%;
@@ -215,7 +237,7 @@ nav a:active {
 }
 
 footer {
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 10%;
     margin-right: 10%;
     border-top: solid rgba(189, 186, 186, 0.308) 1px;
