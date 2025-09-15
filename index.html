@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorenzo Cabiati | Full-Stack Developer</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="#home" class="logo">Lorenzo<span>Cabiati</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Servizi</a></li>
+        <li><a href="#works">Lavori</a></li>
+        <li><a href="#contact" class="btn-nav">Contattami</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Ciao, sono <span>Lorenzo Cabiati</span></h1>
+      <h2 class="subtitle">Full-Stack Web Developer</h2>
+      <p class="tagline">
+        <span id="typed-text"></span><span class="cursor">|</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Parliamo del tuo progetto</a>
+        <a href="#works" class="btn-secondary">Guarda i miei lavori</a>
+      </div>
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="grid skills-grid">
+      <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React, Vue</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-server"></i>
+        <h3>Backend</h3>
+        <p>Node.js, PHP, Next.js</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Database</h3>
+        <p>MySQL, MongoDB, Supabase</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>API & Architetture</h3>
+        <p>REST, GraphQL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section dark">
+    <h2>Servizi</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Siti Web Moderni</h3>
+        <p>Landing page e portali responsive, ottimizzati per SEO e performance.</p>
+      </div>
+      <div class="card">
+        <h3>Applicazioni Complesse</h3>
+        <p>Dashboard, gestionali e piattaforme scalabili lato frontend & backend.</p>
+      </div>
+      <div class="card">
+        <h3>Soluzioni Personalizzate</h3>
+        <p>Analisi, design e sviluppo per progetti unici e complessi.</p>
+      </div>
+    </div>
+    <a href="#contact" class="btn-secondary btn-consulenza">Richiedi una consulenza</a>
+  </section>
+
+  <!-- Works -->
+  <section id="works" class="section">
+    <h2>Lavori Recenti</h2>
+    <div class="grid works-grid">
+      <div class="work-card">Progetto 1</div>
+      <div class="work-card">Progetto 2</div>
+      <div class="work-card">Progetto 3</div>
+      <div class="work-card">Progetto 4</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section dark contact">
+    <h2>Contattami</h2>
+    <p>Hai un’idea? Un progetto complesso? Sono qui per trasformarlo in realtà.</p>
+    <div class="contact-container">
+      <!-- Form -->
+      <form class="contact-form">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Il tuo messaggio" required></textarea>
+        <button type="submit" class="btn-primary">Invia</button>
+      </form>
+      <!-- Info -->
+      <div class="contact-info">
+        <p><strong>Telefono:</strong> +39 339 4807120</p>
+        <p><strong>Email:</strong> lollo.cabiatida04@gmail.com</p>
+        <p>
+          <a href="https://www.linkedin.com/in/lorenzo-cabiati" target="_blank" class="linkedin-link">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Lorenzo Cabiati. Tutti i diritti riservati.</p>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    ScrollReveal().reveal('.hero-content, .skills-grid .skill-card, .grid .card, .works-grid .work-card, .contact-form, .contact-info', {
+      duration: 1000,
+      distance: '50px',
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 150
+    });
+  </script>
+
+  <!-- Typing effect -->
+  <script>
+    const texts = [
+      "Creo siti web moderni",
+      "Sviluppo app scalabili",
+      "Realizzo soluzioni su misura"
+    ];
+    let count = 0, index = 0, currentText = '', letter = '';
+    const typedText = document.getElementById("typed-text");
+    const cursor = document.querySelector(".cursor");
+
+    function type() {
+      if (count === texts.length) { count = 0; }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      typedText.textContent = letter;
+      if (letter.length === currentText.length) {
+        setTimeout(() => {
+          index = 0;
+          count++;
+          type();
+        }, 2000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }
+    type();
+    setInterval(() => cursor.classList.toggle('hidden'), 500);
+  </script>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const overlay = document.querySelector(".overlay");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      overlay.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+
+    // Chiudi menu al click su un link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
+    });
+
+    // Chiudi menu al click sull’overlay
+    overlay.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      overlay.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
